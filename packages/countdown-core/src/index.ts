@@ -1,3 +1,5 @@
+export { calculateTimeLeft, formatTimeLeft } from "./date";
+
 export const SEGMENT_MAP: { [key: string]: string[] } = {
   "0": ["A", "B", "C", "D", "E", "F"],
   "1": ["B", "C"],
@@ -65,21 +67,6 @@ export const getPoints = (segment: string): string => {
     default:
       return "";
   }
-};
-
-export const calculateTimeLeft = (targetDate: Date) => {
-  const now = new Date();
-  const difference = targetDate.getTime() - now.getTime();
-  return Math.max(Math.floor(difference / 1000), 0);
-};
-
-export const formatTimeLeft = (timeLeft: number) => {
-  const days = Math.floor(timeLeft / (3600 * 24));
-  const hours = Math.floor((timeLeft % (3600 * 24)) / 3600);
-  const minutes = Math.floor((timeLeft % 3600) / 60);
-  const seconds = timeLeft % 60;
-
-  return { days, hours, minutes, seconds };
 };
 
 export const zeroPad = (num: number, places: number) => {
