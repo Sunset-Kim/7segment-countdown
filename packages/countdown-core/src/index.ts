@@ -1,3 +1,8 @@
 export { calculateTimeLeft, formatTimeLeft } from "./date";
-export { createHorizontalSegmentPoints, getPoints } from "./segment";
+export {
+  createHorizontalSegmentPoints,
+  getPoints,
+  SEGMENT_MAP,
+  SEGMENT_KEY,
+} from "./segment";
 export { zeroPad } from "./pad";
