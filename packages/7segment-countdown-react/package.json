@@ -1,8 +1,13 @@
 {
-  "name": "seven-segment",
+  "name": "7segment-countdown-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc --p ./tsconfig.build.json && vite build",
