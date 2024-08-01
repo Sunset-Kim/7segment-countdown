@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithoutRef, useId } from "react";
 import { SEGMENT_KEY, SEGMENT_MAP, getPoints } from "countdown-core";
 
-interface SevenSegmentProps {
+export interface SevenSegmentProps {
   digit: number;
   segmentOnColor?: string;
   segmentOffColor?: string;
