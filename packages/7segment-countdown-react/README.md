@@ -1,30 +1,82 @@
-# React + TypeScript + Vite
+# Countdown Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+이 프로젝트는 React 애플리케이션을 위한 유연하고 사용하기 쉬운 카운트다운 컴포넌트를 제공합니다. 세븐 세그먼트 디스플레이 스타일의 시각적 요소를 포함하여 남은 시간을 일, 시간, 분, 초 단위로 표시할 수 있습니다.
 
-Currently, two official plugins are available:
+## 프로젝트 개요
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+이 라이브러리는 다음과 같은 주요 기능을 제공합니다:
 
-## Expanding the ESLint configuration
+1. `Countdown` 컴포넌트: 목표 날짜까지의 남은 시간을 계산하고 표시합니다.
+2. `SevenSegment` 컴포넌트: 숫자를 세븐 세그먼트 디스플레이 스타일로 표시합니다.
+3. `useCountdown` 훅: 카운트다운 로직을 구현하여 남은 시간을 계산합니다.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 설치 방법
 
-- Configure the top-level `parserOptions` property like this:
+npm을 사용하여 패키지를 설치할 수 있습니다:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
+```bash
+npm install 7segment-countdown-react
+```
+
+또는 yarn을 사용하는 경우:
+
+```bash
+yarn add 7segment-countdown-react
+```
+
+## 사용 방법
+
+### 기본사용방법
+
+```tsx
+import { Countdown } from "countdown-component";
+
+function App() {
+  const targetDate = new Date("2024-12-31T23:59:59");
+
+  return (
+    <Countdown targetDate={targetDate}>
+      <Countdown.Days />
+      <Countdown.Hours />
+      <Countdown.Minutes />
+      <Countdown.Seconds />
+    </Countdown>
+  );
 }
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 커스텀 스타일링
+
+SevenSegment 컴포넌트의 스타일을 커스터마이즈할 수 있습니다:
+
+```tsx
+<Countdown.Days
+  segmentOnColor="#ff0000"
+  segmentOffColor="#330000"
+  size={40}
+  animationDuration="0.5s"
+/>
+```
+
+### useCountdown 훅 사용
+
+카운트다운 로직을 직접 사용하고 싶다면 useCountdown 훅을 활용할 수 있습니다:
+
+```tsx
+import { useCountdown } from "countdown-component";
+
+function CustomCountdown() {
+  const targetDate = new Date("2024-12-31T23:59:59");
+  const { days, hours, minutes, seconds } = useCountdown(targetDate);
+
+  return (
+    <div>
+      {days}일 {hours}시간 {minutes}분 {seconds}초 남았습니다.
+    </div>
+  );
+}
+```
+
+## 라이선스
+
+이 프로젝트는 MIT 라이선스 하에 제공됩니다. 자세한 내용은 LICENSE 파일을 참조하세요.
