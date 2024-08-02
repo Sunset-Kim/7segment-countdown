@@ -45,6 +45,49 @@ function App() {
 }
 ```
 
+```tsx
+function App() {
+  const [count, setCount] = useState(0);
+  const targetDate = useMemo(() => new Date("2024-08-03T00:00:00Z"), []);
+
+  return (
+    <>
+      <div>
+        <h1>7 Segment Countdown</h1>
+      </div>
+
+      <div className="card">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 50,
+            marginBottom: 50,
+          }}
+        >
+          <button onClick={() => setCount((count) => count + 1)}>
+            Increase
+          </button>
+          {count}
+          <SevenSegment digit={count} />
+          <button onClick={() => setCount((count) => count - 1)}>
+            Decrease
+          </button>
+        </div>
+
+        <Countdown targetDate={targetDate}>
+          <Countdown.Days />
+          <Countdown.Hours />
+          <Countdown.Minutes />
+          <Countdown.Seconds />
+        </Countdown>
+      </div>
+    </>
+  );
+}
+```
+
 ### 커스텀 스타일링
 
 SevenSegment 컴포넌트의 스타일을 커스터마이즈할 수 있습니다:
