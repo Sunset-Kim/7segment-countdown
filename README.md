@@ -9,6 +9,7 @@
 - `packages/example`: 카운트다운 컴포넌트 사용 예제 애플리케이션
 
 ## 시작하기
+https://github.com/user-attachments/assets/2f9b0d74-d939-403d-97e3-f324f03bb1bb
 
 ## 사용 방법
 
