@@ -120,6 +120,23 @@ function CustomCountdown() {
 }
 ```
 
+## Test Coverage
+
+| File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+| --------------------- | ------- | -------- | ------- | ------- | ----------------- |
+| All files             | 29.85   | 54.54    | 25      | 29.85   |
+| lib                   | 0       | 0        | 0       | 0       |
+| main.ts               | 0       | 0        | 0       | 0       | 1                 |
+| lib/components        | 37.95   | 63.15    | 33.33   | 37.95   |
+| countdown-day.tsx     | 0       | 0        | 0       | 0       | 1-17              |
+| countdown-hour.tsx    | 0       | 0        | 0       | 0       | 1-18              |
+| countdown-minutes.tsx | 0       | 0        | 0       | 0       | 1-18              |
+| countdown-seconds.tsx | 0       | 0        | 0       | 0       | 1-18              |
+| countdown.context.tsx | 0       | 0        | 0       | 0       | 1-27              |
+| countdown.tsx         | 0       | 0        | 0       | 0       | 1-35              |
+| seven-segment.tsx     | 100     | 87.5     | 100     | 100     | 23                |
+| use-countdown.ts      | 100     | 100      | 100     | 100     |
+
 ## 라이선스
 
 이 프로젝트는 MIT 라이선스 하에 제공됩니다. 자세한 내용은 LICENSE 파일을 참조하세요.
