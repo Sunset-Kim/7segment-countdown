@@ -8,7 +8,14 @@ export const useCountdown = (targetDate: Date) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeLeft(calculateTimeLeft({ targetDate, currentDate: new Date() }));
+      const newTimeLeft = calculateTimeLeft({
+        targetDate,
+        currentDate: new Date(),
+      });
+      setTimeLeft(newTimeLeft);
+      if (!newTimeLeft) {
+        clearInterval(interval);
+      }
     }, 1000);
 
     return () => clearInterval(interval);
