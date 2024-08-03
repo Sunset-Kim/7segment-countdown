@@ -1,16 +1,25 @@
 import { useCountdown } from "./use-countdown";
-import { CountdownProvider } from "../contexts/countdown.context";
+
 import { PropsWithChildren } from "react";
 import { CountdownDay } from "./countdown-day";
 import { CountdownMinutes } from "./countdown-minutes";
 import { CountdownHour } from "./countdown-hour";
 import { CountdownSeconds } from "./countdown-seconds";
+import { CountdownStyleProvider } from "../contexts/coundown-style.context";
+import { CountdownProvider } from "../contexts/countdown.context";
+import { SevenSegmentProps } from "./seven-segment";
 
-interface CountdownProps extends PropsWithChildren {
+interface CountdownProps
+  extends PropsWithChildren,
+    Omit<SevenSegmentProps, "digit"> {
   targetDate: Date;
 }
 
-function CountdownContainer({ targetDate, children }: CountdownProps) {
+function CountdownContainer({
+  targetDate,
+  children,
+  ...props
+}: CountdownProps) {
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
 
   return (
@@ -22,7 +31,9 @@ function CountdownContainer({ targetDate, children }: CountdownProps) {
         seconds,
       }}
     >
-      {children}
+      <CountdownStyleProvider value={{ ...props }}>
+        {children}
+      </CountdownStyleProvider>
     </CountdownProvider>
   );
 }
