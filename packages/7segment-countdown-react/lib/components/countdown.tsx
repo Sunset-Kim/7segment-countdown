@@ -1,4 +1,4 @@
-import { useCountdown } from "./use-countdown";
+import { useCountdown } from "../hooks/use-countdown";
 
 import { PropsWithChildren } from "react";
 import { CountdownDay } from "./countdown-day";
