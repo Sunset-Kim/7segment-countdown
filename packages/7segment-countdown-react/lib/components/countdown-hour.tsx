@@ -1,4 +1,3 @@
-import { zeroPad } from "countdown-core";
 import { useCountdownContext } from "./countdown.context";
 import { SevenSegment, SevenSegmentProps } from "./seven-segment";
 
@@ -6,7 +5,7 @@ export const CountdownHour = ({
   ...props
 }: Omit<SevenSegmentProps, "digit">) => {
   const { hours } = useCountdownContext();
-  const hoursString = zeroPad(hours, 2);
+  const hoursString = hours.toString().padStart(2, "0");
 
   return (
     <>
