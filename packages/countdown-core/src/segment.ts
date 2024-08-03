@@ -12,7 +12,7 @@ export const SEGMENT_MAP = Object.freeze({
   "9": ["A", "B", "C", "D", "F", "G"],
 });
 
-export const createHorizontalSegmentPoints = (
+const createHorizontalSegmentPoints = (
   x: number,
   y: number,
   width: number,
