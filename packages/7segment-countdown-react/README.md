@@ -94,8 +94,8 @@ SevenSegment 컴포넌트의 스타일을 커스터마이즈할 수 있습니다
 
 ```tsx
 <Countdown.Days
-  segmentOnColor="#ff0000"
-  segmentOffColor="#330000"
+  onColor="#ff0000"
+  offColor="#330000"
   size={40}
   animationDuration="0.5s"
 />

@@ -38,9 +38,7 @@ describe("SevenSegment 컴포넌트", () => {
   });
 
   it("속성에 따라 올바른 색상 스타일이 적용되어야 합니다", () => {
-    render(
-      <SevenSegment digit={1} segmentOnColor="green" segmentOffColor="black" />
-    );
+    render(<SevenSegment digit={1} onColor="green" offColor="black" />);
     const segments = ["A", "B", "C", "D", "E", "F", "G"];
     segments.forEach((segment) => {
       const element = screen.getByTestId(`segment-${segment}`);

@@ -3,16 +3,16 @@ import { SEGMENT_KEY, SEGMENT_MAP, getPoints } from "countdown-core";
 
 export interface SevenSegmentProps {
   digit: number;
-  segmentOnColor?: string;
-  segmentOffColor?: string;
+  onColor?: string;
+  offColor?: string;
   size?: number;
   animationDuration?: string;
 }
 
 export const SevenSegment: React.FC<SevenSegmentProps> = ({
   digit,
-  segmentOnColor = "dodgerblue",
-  segmentOffColor = "aliceblue",
+  onColor = "dodgerblue",
+  offColor = "aliceblue",
   size = 100,
   animationDuration = "0.3s",
 }) => {
@@ -31,9 +31,7 @@ export const SevenSegment: React.FC<SevenSegmentProps> = ({
             segment={segment}
             isActive={segments.includes(segment)}
             style={{
-              fill: segments.includes(segment)
-                ? segmentOnColor
-                : segmentOffColor,
+              fill: segments.includes(segment) ? onColor : offColor,
               transition: `fill ${animationDuration}`,
             }}
           />
