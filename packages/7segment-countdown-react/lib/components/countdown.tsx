@@ -32,7 +32,14 @@ function CountdownContainer({
       }}
     >
       <CountdownStyleProvider value={{ ...props }}>
-        {children}
+        {children ?? (
+          <>
+            <Countdown.Days />
+            <Countdown.Hours />
+            <Countdown.Minutes />
+            <Countdown.Seconds />
+          </>
+        )}
       </CountdownStyleProvider>
     </CountdownProvider>
   );
