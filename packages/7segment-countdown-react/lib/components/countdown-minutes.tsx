@@ -1,4 +1,4 @@
-import { useCountdownContext } from "./countdown.context";
+import { useCountdownContext } from "../hooks/use-countdown-context";
 import { SevenSegment, SevenSegmentProps } from "./seven-segment";
 
 export const CountdownMinutes = ({

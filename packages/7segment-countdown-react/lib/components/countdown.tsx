@@ -1,5 +1,5 @@
 import { useCountdown } from "./use-countdown";
-import { CountdownProvider } from "./countdown.context";
+import { CountdownProvider } from "../contexts/countdown.context";
 import { PropsWithChildren } from "react";
 import { CountdownDay } from "./countdown-day";
 import { CountdownMinutes } from "./countdown-minutes";
