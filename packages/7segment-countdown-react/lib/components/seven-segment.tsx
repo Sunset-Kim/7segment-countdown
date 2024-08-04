@@ -1,12 +1,21 @@
 import React, { ComponentPropsWithoutRef, useId } from "react";
 import { SEGMENT_KEY, SEGMENT_MAP, getPoints } from "countdown-core";
 
+/**
+ * SevenSegment 컴포넌트의 속성을 정의하는 인터페이스
+ * @interface SevenSegmentProps
+ */
 export interface SevenSegmentProps {
+  /** 표시할 숫자 (0-9) */
   digit: number;
+  /** 활성화된 세그먼트의 색상 */
   onColor?: string;
+  /** 비활성화된 세그먼트의 색상 */
   offColor?: string;
+  /** 컴포넌트의 크기 (픽셀 단위) */
   size?: number;
-  animationDuration?: string;
+  /** 세그먼트 색상 변경 애니메이션 지속 시간 (밀리초 단위) */
+  animationDuration?: number;
 }
 
 export const SevenSegment: React.FC<SevenSegmentProps> = ({
@@ -14,7 +23,7 @@ export const SevenSegment: React.FC<SevenSegmentProps> = ({
   onColor = "dodgerblue",
   offColor = "aliceblue",
   size = 100,
-  animationDuration = "0.3s",
+  animationDuration = 300,
 }) => {
   const id = useId();
 
@@ -32,7 +41,7 @@ export const SevenSegment: React.FC<SevenSegmentProps> = ({
             isActive={segments.includes(segment)}
             style={{
               fill: segments.includes(segment) ? onColor : offColor,
-              transition: `fill ${animationDuration}`,
+              transition: `fill ${animationDuration}ms`,
             }}
           />
         ))}
@@ -41,9 +50,15 @@ export const SevenSegment: React.FC<SevenSegmentProps> = ({
   );
 };
 
+/**
+ * @interface SegmentProps
+ * @extends {ComponentPropsWithoutRef<"polygon">}
+ */
 interface SegmentProps
   extends Omit<ComponentPropsWithoutRef<"polygon">, "points"> {
+  /** segment 식별자 */
   segment: string;
+  /** 활성화 여부 */
   isActive: boolean;
 }
 
