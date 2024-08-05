@@ -1,6 +1,6 @@
-import { useCountdownContext } from "../hooks/use-countdown-context";
-import { useCountdownStyle } from "../hooks/use-countdown-style-context";
-import { SevenSegment, SevenSegmentProps } from "./seven-segment";
+import { useCountdownContext } from "../../hooks/use-countdown-context";
+import { useCountdownStyle } from "../../hooks/use-countdown-style-context";
+import { SevenSegment, SevenSegmentProps } from "../seven-segment";
 
 export const CountdownDay = ({
   ...props

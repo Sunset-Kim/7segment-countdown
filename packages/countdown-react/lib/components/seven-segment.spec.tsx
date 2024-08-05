@@ -51,7 +51,7 @@ describe("SevenSegment 컴포넌트", () => {
   });
 
   it("애니메이션 지속 시간에 따라 세그먼트 색상이 변경되어야 합니다", () => {
-    render(<SevenSegment digit={2} animationDuration="1s" />);
+    render(<SevenSegment digit={2} animationDuration={1000} />);
     const segments = ["A", "B", "C", "D", "E", "F", "G"];
     segments.forEach((segment) => {
       expect(screen.getByTestId(`segment-${segment}`)).toHaveStyle(

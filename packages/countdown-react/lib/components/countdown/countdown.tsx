@@ -1,17 +1,20 @@
-import { useCountdown } from "../hooks/use-countdown";
+import { useCountdown } from "../../hooks/use-countdown";
 
 import { PropsWithChildren } from "react";
 import { CountdownDay } from "./countdown-day";
 import { CountdownMinutes } from "./countdown-minutes";
 import { CountdownHour } from "./countdown-hour";
 import { CountdownSeconds } from "./countdown-seconds";
-import { CountdownStyleProvider } from "../contexts/coundown-style.context";
-import { CountdownProvider } from "../contexts/countdown.context";
-import { SevenSegmentProps } from "./seven-segment";
+import { CountdownStyleProvider } from "../../contexts/coundown-style.context";
+import { CountdownProvider } from "../../contexts/countdown.context";
+import { SevenSegmentProps } from "../seven-segment";
+import { CountDownColon } from "./countdown-colon";
+import { ColonProps } from "../colon";
 
 interface CountdownProps
   extends PropsWithChildren,
-    Omit<SevenSegmentProps, "digit"> {
+    Omit<SevenSegmentProps, "digit">,
+    ColonProps {
   targetDate: Date;
 }
 
@@ -35,8 +38,11 @@ function CountdownContainer({
         {children ?? (
           <>
             <Countdown.Days />
+            <Countdown.Colon />
             <Countdown.Hours />
+            <Countdown.Colon />
             <Countdown.Minutes />
+            <Countdown.Colon />
             <Countdown.Seconds />
           </>
         )}
@@ -50,4 +56,5 @@ export const Countdown = Object.assign(CountdownContainer, {
   Minutes: CountdownMinutes,
   Hours: CountdownHour,
   Seconds: CountdownSeconds,
+  Colon: CountDownColon,
 });
