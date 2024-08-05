@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef, useId } from "react";
-import { SEGMENT_KEY, SEGMENT_MAP, getPoints } from "countdown-core";
+import { SEGMENT_KEY, SEGMENT_MAP, getPoints } from "../../../core/dist";
 
 /**
  * SevenSegment 컴포넌트의 속성을 정의하는 인터페이스

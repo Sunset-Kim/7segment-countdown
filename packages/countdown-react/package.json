@@ -1,5 +1,5 @@
 {
-  "name": "7segment-countdown-react",
+  "name": "@7segment/countdown-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",

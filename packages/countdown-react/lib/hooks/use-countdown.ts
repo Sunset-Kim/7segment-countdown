@@ -1,4 +1,4 @@
-import { calculateTimeLeft, formatTimeLeft } from "countdown-core";
+import { calculateTimeLeft, formatTimeLeft } from "../../../core/dist";
 import { useEffect, useState } from "react";
 
 export const useCountdown = (targetDate: Date) => {

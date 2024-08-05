@@ -1,5 +1,5 @@
 {
-  "name": "countdown-core",
+  "name": "@7segment/core",
   "version": "0.0.0",
   "description": "",
   "main": "dist/index.js",
