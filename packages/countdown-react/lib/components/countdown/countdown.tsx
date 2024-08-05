@@ -58,8 +58,8 @@ function CountdownContainer({
 
 export const Countdown = Object.assign(CountdownContainer, {
   Days: CountdownDay,
-  Minutes: CountdownMinutes,
   Hours: CountdownHour,
+  Minutes: CountdownMinutes,
   Seconds: CountdownSeconds,
   Colon: CountDownColon,
 });

@@ -1,3 +1,4 @@
+import { formatTimeLeft } from "@7segment/core";
 import { useState, useEffect, useCallback, useRef } from "react";
 
 export const useControlledCountdown = (initialSeconds: number) => {
@@ -5,58 +6,61 @@ export const useControlledCountdown = (initialSeconds: number) => {
   const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const clearIntervalIfExists = useCallback(() => {
+  const clearCountdownInterval = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
   }, []);
 
+  const stopCountdown = useCallback(() => {
+    clearCountdownInterval();
+    setIsRunning(false);
+  }, [clearCountdownInterval]);
+
   const tick = useCallback(() => {
     setSecondsLeft((prevSeconds) => {
       if (prevSeconds <= 1) {
-        clearIntervalIfExists();
-        setIsRunning(false);
+        stopCountdown();
         return 0;
       }
       return prevSeconds - 1;
     });
-  }, [clearIntervalIfExists]);
+  }, [stopCountdown]);
+
+  useEffect(() => {
+    setSecondsLeft(initialSeconds);
+  }, [initialSeconds]);
 
   useEffect(() => {
     if (isRunning) {
       intervalRef.current = setInterval(tick, 1000);
     } else {
-      clearIntervalIfExists();
+      clearCountdownInterval();
     }
 
-    return clearIntervalIfExists;
-  }, [isRunning, tick, clearIntervalIfExists]);
+    return clearCountdownInterval;
+  }, [isRunning, tick, clearCountdownInterval]);
 
   const start = useCallback(() => {
-    if (isRunning || secondsLeft <= 0) return;
-    setIsRunning(true);
+    if (!isRunning && secondsLeft > 0) {
+      setIsRunning(true);
+    }
   }, [isRunning, secondsLeft]);
 
   const stop = useCallback(() => {
-    if (!isRunning) return;
-    setIsRunning(false);
+    if (isRunning) {
+      setIsRunning(false);
+    }
   }, [isRunning]);
 
   const reset = useCallback(() => {
-    setIsRunning(false);
+    stopCountdown();
     setSecondsLeft(initialSeconds);
-  }, [initialSeconds]);
-
-  const formatTime = useCallback(() => {
-    const hours = Math.floor(secondsLeft / 3600);
-    const minutes = Math.floor((secondsLeft % 3600) / 60);
-    const seconds = secondsLeft % 60;
-    return { hours, minutes, seconds };
-  }, [secondsLeft]);
+  }, [initialSeconds, stopCountdown]);
 
   return {
-    ...formatTime(),
+    ...formatTimeLeft(secondsLeft),
     isRunning,
     start,
     stop,

@@ -2,10 +2,15 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { SevenSegment } from "../lib/main";
+import { useControlledCountdown } from "../lib/hooks/use-controlled-countdown";
 
 function App() {
   const [count, setCount] = useState(0);
+  const { days, hours, isRunning, minutes, seconds, start, stop } =
+    useControlledCountdown(60 * 4);
 
+  console.log("🚀 ~ App ~ isRunning:", isRunning);
   return (
     <>
       <div>
@@ -25,6 +30,16 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
+
+      <button onClick={start}>start</button>
+      <button onClick={stop}>stop</button>
+      {seconds
+        .toString()
+        .padStart(2, "0")
+        .split("")
+        .map((second, index) => {
+          return <SevenSegment key={index} digit={parseInt(second)} />;
+        })}
     </>
   );
 }

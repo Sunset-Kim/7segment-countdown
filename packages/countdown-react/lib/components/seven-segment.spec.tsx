@@ -55,7 +55,7 @@ describe("SevenSegment 컴포넌트", () => {
     const segments = ["A", "B", "C", "D", "E", "F", "G"];
     segments.forEach((segment) => {
       expect(screen.getByTestId(`segment-${segment}`)).toHaveStyle(
-        "transition: fill 1s"
+        "transition: fill 1000ms"
       );
     });
   });
