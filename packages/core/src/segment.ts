@@ -1,4 +1,11 @@
+/**
+ * 7-segment display의 각 세그먼트를 나타내는 키 배열
+ */
 export const SEGMENT_KEY = Object.freeze(["A", "B", "C", "D", "E", "F", "G"]);
+
+/**
+ * 7-segment display에서 각 숫자를 표현하는 세그먼트 조합 맵
+ */
 export const SEGMENT_MAP = Object.freeze({
   "0": ["A", "B", "C", "D", "E", "F"],
   "1": ["B", "C"],
@@ -12,6 +19,14 @@ export const SEGMENT_MAP = Object.freeze({
   "9": ["A", "B", "C", "D", "F", "G"],
 });
 
+/**
+ * 가로 세그먼트를 생성합니다.
+ * @param x : x 좌표
+ * @param y : y 좌표
+ * @param width : 가로 길이
+ * @param height : 세로 길이
+ * @returns : svg points
+ */
 const createHorizontalSegmentPoints = (
   x: number,
   y: number,
@@ -29,6 +44,14 @@ const createHorizontalSegmentPoints = (
    ${rightX},${centerY} ${rightX - 10},${bottomY} ${leftX + 10},${bottomY}`;
 };
 
+/**
+ * 세로 세그먼트를 생성합니다.
+ * @param x : x 좌표
+ * @param y : y 좌표
+ * @param width : 가로 길이
+ * @param height : 세로 길이
+ * @returns svg points
+ */
 const createVerticalSegmentPoints = (
   x: number,
   y: number,
@@ -46,6 +69,11 @@ const createVerticalSegmentPoints = (
    ${centerX},${bottomY} ${leftX},${bottomY - 10} ${leftX},${topY + 10}`;
 };
 
+/**
+ * 주어진 세그먼트 키에 해당하는 SVG 포인트 문자열을 반환합니다.
+ * @param segment 세그먼트 키 (A, B, C, D, E, F, G 중 하나)
+ * @returns SVG 포인트 문자열
+ */
 export const getPoints = (segment: string): string => {
   switch (segment) {
     case "A":
