@@ -1,3 +1,5 @@
+import { DAY_IN_SEC, HOUR_IN_SEC, MIN_IN_SEC, SEC_IN_MS } from "./constants";
+
 export const calculateTimeLeft = ({
   targetDate,
   currentDate = new Date(),
@@ -6,14 +8,14 @@ export const calculateTimeLeft = ({
   currentDate?: Date;
 }) => {
   const difference = targetDate.getTime() - currentDate.getTime();
-  return Math.max(Math.floor(difference / 1000), 0);
+  return Math.max(Math.floor(difference / SEC_IN_MS), 0);
 };
 
 export const formatTimeLeft = (timeLeft: number) => {
-  const days = Math.floor(timeLeft / (3600 * 24));
-  const hours = Math.floor((timeLeft % (3600 * 24)) / 3600);
-  const minutes = Math.floor((timeLeft % 3600) / 60);
-  const seconds = timeLeft % 60;
+  const days = Math.floor(timeLeft / DAY_IN_SEC);
+  const hours = Math.floor((timeLeft % DAY_IN_SEC) / HOUR_IN_SEC);
+  const minutes = Math.floor((timeLeft % HOUR_IN_SEC) / MIN_IN_SEC);
+  const seconds = timeLeft % MIN_IN_SEC;
 
   return { days, hours, minutes, seconds };
 };
