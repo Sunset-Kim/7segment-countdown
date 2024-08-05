@@ -1,7 +1,14 @@
 import { calculateTimeLeft, formatTimeLeft } from "../../../core/dist";
 import { useEffect, useState } from "react";
 
-export const useCountdown = (targetDate: Date) => {
+interface CountdownHookOption {
+  onEnd?: () => void;
+}
+
+export const useCountdown = (
+  targetDate: Date,
+  option?: CountdownHookOption
+) => {
   const [timeLeft, setTimeLeft] = useState(
     calculateTimeLeft({ targetDate, currentDate: new Date() })
   );
@@ -13,13 +20,15 @@ export const useCountdown = (targetDate: Date) => {
         currentDate: new Date(),
       });
       setTimeLeft(newTimeLeft);
-      if (!newTimeLeft) {
+
+      if (newTimeLeft <= 0) {
         clearInterval(interval);
+        option?.onEnd?.();
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [targetDate]);
+  }, [targetDate, option]);
 
   return formatTimeLeft(timeLeft);
 };

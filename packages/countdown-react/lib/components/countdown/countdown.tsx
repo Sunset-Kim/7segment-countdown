@@ -1,6 +1,6 @@
 import { useCountdown } from "../../hooks/use-countdown";
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useMemo } from "react";
 import { CountdownDay } from "./countdown-day";
 import { CountdownMinutes } from "./countdown-minutes";
 import { CountdownHour } from "./countdown-hour";
@@ -16,14 +16,19 @@ interface CountdownProps
     Omit<SevenSegmentProps, "digit">,
     ColonProps {
   targetDate: Date;
+  onEnd?: () => void;
 }
 
 function CountdownContainer({
   targetDate,
   children,
+  onEnd,
   ...props
 }: CountdownProps) {
-  const { days, hours, minutes, seconds } = useCountdown(targetDate);
+  const _targetDate = useMemo(() => targetDate, [targetDate]);
+  const { days, hours, minutes, seconds } = useCountdown(_targetDate, {
+    onEnd,
+  });
 
   return (
     <CountdownProvider

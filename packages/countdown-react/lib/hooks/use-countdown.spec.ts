@@ -107,4 +107,17 @@ describe("useCountdown", () => {
     unmount();
     expect(clearIntervalSpy).toHaveBeenCalled();
   });
+
+  it("should call onEnd callback when target date is reached", () => {
+    const targetDate = new Date(Date.now() + 2000); // 2 seconds from now
+    const onEnd = vi.fn();
+    renderHook(() => useCountdown(targetDate, { onEnd }));
+
+    expect(onEnd).not.toHaveBeenCalled();
+
+    act(() => {
+      vi.advanceTimersByTime(2000);
+    });
+    expect(onEnd).toHaveBeenCalled();
+  });
 });
