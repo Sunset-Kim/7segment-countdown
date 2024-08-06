@@ -9,14 +9,15 @@
 - `packages/example`: 카운트다운 컴포넌트 사용 예제 애플리케이션
 
 ## 시작하기
+
 https://github.com/user-attachments/assets/2f9b0d74-d939-403d-97e3-f324f03bb1bb
 
 ## 사용 방법
 
 각 패키지의 사용 방법에 대한 자세한 내용은 해당 패키지의 README.md 파일을 참조하세요.
 
-- [countdown-component](packages/7segment-countdown-react/README.md)
-- [countdown-core](packages/countdown-core/README.md)
+- [countdown-component](packages/countdown-react/README.md)
+- [countdown-core](packages/core/README.md)
 
 ## 기여하기
 
