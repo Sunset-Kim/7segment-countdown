@@ -1,0 +1,45 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Colon 컴포넌트 > 기본 프롭스로 렌더링된 스냅샷과 일치해야 함 1`] = `
+<svg
+  height="200"
+  role="img"
+  viewBox="0 0 20 200"
+  width="20"
+>
+  <circle
+    cx="10"
+    cy="70"
+    fill="dodgerblue"
+    r="5"
+  />
+  <circle
+    cx="10"
+    cy="130"
+    fill="dodgerblue"
+    r="5"
+  />
+</svg>
+`;
+
+exports[`Colon 컴포넌트 > 커스텀 프롭스로 렌더링된 스냅샷과 일치해야 함 1`] = `
+<svg
+  height="400"
+  role="img"
+  viewBox="0 0 20 200"
+  width="40"
+>
+  <circle
+    cx="10"
+    cy="60"
+    fill="red"
+    r="5"
+  />
+  <circle
+    cx="10"
+    cy="140"
+    fill="red"
+    r="5"
+  />
+</svg>
+`;

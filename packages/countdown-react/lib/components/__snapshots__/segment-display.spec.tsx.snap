@@ -1,0 +1,137 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SegmentDisplay > 기본 props로 렌더링 1`] = `
+<svg
+  height="200"
+  role="img"
+  viewBox="0 0 100 200"
+  width="100"
+>
+  <g>
+    <polygon
+      class="segment "
+      data-testid="segment-A"
+      id="segment-A"
+      points="10,10 20,2.5 80,2.5
+   90,10 80,17.5 20,17.5"
+      style="fill: aliceblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment on"
+      data-testid="segment-B"
+      id="segment-B"
+      points="90,10 97.5,20 97.5,80
+   90,90 82.5,80 82.5,20"
+      style="fill: dodgerblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment on"
+      data-testid="segment-C"
+      id="segment-C"
+      points="90,90 97.5,100 97.5,160
+   90,170 82.5,160 82.5,100"
+      style="fill: dodgerblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment "
+      data-testid="segment-D"
+      id="segment-D"
+      points="10,170 20,162.5 80,162.5
+   90,170 80,177.5 20,177.5"
+      style="fill: aliceblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment "
+      data-testid="segment-E"
+      id="segment-E"
+      points="10,90 17.5,100 17.5,160
+   10,170 2.5,160 2.5,100"
+      style="fill: aliceblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment on"
+      data-testid="segment-F"
+      id="segment-F"
+      points="10,10 17.5,20 17.5,80
+   10,90 2.5,80 2.5,20"
+      style="fill: dodgerblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment on"
+      data-testid="segment-G"
+      id="segment-G"
+      points="10,90 20,82.5 80,82.5
+   90,90 80,97.5 20,97.5"
+      style="fill: dodgerblue; transition: fill 300ms;"
+    />
+  </g>
+</svg>
+`;
+
+exports[`SegmentDisplay > 다양한 값과 place로 렌더링 1`] = `
+<svg
+  height="200"
+  role="img"
+  viewBox="0 0 100 200"
+  width="100"
+>
+  <g>
+    <polygon
+      class="segment on"
+      data-testid="segment-A"
+      id="segment-A"
+      points="10,10 20,2.5 80,2.5
+   90,10 80,17.5 20,17.5"
+      style="fill: dodgerblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment on"
+      data-testid="segment-B"
+      id="segment-B"
+      points="90,10 97.5,20 97.5,80
+   90,90 82.5,80 82.5,20"
+      style="fill: dodgerblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment on"
+      data-testid="segment-C"
+      id="segment-C"
+      points="90,90 97.5,100 97.5,160
+   90,170 82.5,160 82.5,100"
+      style="fill: dodgerblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment on"
+      data-testid="segment-D"
+      id="segment-D"
+      points="10,170 20,162.5 80,162.5
+   90,170 80,177.5 20,177.5"
+      style="fill: dodgerblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment on"
+      data-testid="segment-E"
+      id="segment-E"
+      points="10,90 17.5,100 17.5,160
+   10,170 2.5,160 2.5,100"
+      style="fill: dodgerblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment on"
+      data-testid="segment-F"
+      id="segment-F"
+      points="10,10 17.5,20 17.5,80
+   10,90 2.5,80 2.5,20"
+      style="fill: dodgerblue; transition: fill 300ms;"
+    />
+    <polygon
+      class="segment "
+      data-testid="segment-G"
+      id="segment-G"
+      points="10,90 20,82.5 80,82.5
+   90,90 80,97.5 20,97.5"
+      style="fill: aliceblue; transition: fill 300ms;"
+    />
+  </g>
+</svg>
+`;
