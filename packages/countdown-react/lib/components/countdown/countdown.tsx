@@ -1,6 +1,6 @@
 import { useCountdown } from "../../hooks/use-countdown";
 
-import { PropsWithChildren, useMemo } from "react";
+import { memo, PropsWithChildren, useMemo } from "react";
 import { CountdownDay } from "./countdown-day";
 import { CountdownMinutes } from "./countdown-minutes";
 import { CountdownHour } from "./countdown-hour";
@@ -56,7 +56,7 @@ function CountdownContainer({
   );
 }
 
-export const Countdown = Object.assign(CountdownContainer, {
+export const Countdown = Object.assign(memo(CountdownContainer), {
   Days: CountdownDay,
   Hours: CountdownHour,
   Minutes: CountdownMinutes,
