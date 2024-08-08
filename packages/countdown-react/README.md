@@ -21,13 +21,13 @@
 npm을 사용하여 패키지를 설치할 수 있습니다:
 
 ```bash
-npm install @7segment/react
+npm i @7segment/countdown-react
 ```
 
 또는 yarn을 사용하는 경우:
 
 ```bash
-yarn add @7segment/react
+yarn add @7segment/countdown-react
 ```
 
 ## 사용 방법
