@@ -1,7 +1,8 @@
 /**
  * 7-segment display의 각 세그먼트를 나타내는 키 배열
  */
-export const SEGMENT_KEY = Object.freeze(["A", "B", "C", "D", "E", "F", "G"]);
+export const SEGMENT_KEY = ["A", "B", "C", "D", "E", "F", "G"] as const;
+type SegmentKey = (typeof SEGMENT_KEY)[number];
 
 /**
  * 7-segment display에서 각 숫자를 표현하는 세그먼트 조합 맵
@@ -74,7 +75,7 @@ const createVerticalSegmentPoints = (
  * @param segment 세그먼트 키 (A, B, C, D, E, F, G 중 하나)
  * @returns SVG 포인트 문자열
  */
-export const getPoints = (segment: string): string => {
+export const getPoints = (segment: SegmentKey): string => {
   switch (segment) {
     case "A":
       return createHorizontalSegmentPoints(10, 10, 80, 15); // 상단 가로
