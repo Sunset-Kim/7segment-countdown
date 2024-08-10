@@ -4,8 +4,8 @@
 
 이 모노레포는 다음과 같은 패키지들을 포함하고 있습니다:
 
-- `packages/7segment-countdown-react`: 리액트에서 7segment 컴포넌트와 countdown 기능을 제공하는 컴포넌트
-- `packages/countdown-core`: 카운트다운 로직의 핵심 기능을 제공하는 패키지
+- `packages/countdown-react`: 리액트에서 7segment 컴포넌트와 countdown 기능을 제공하는 컴포넌트
+- `packages/core`: 카운트다운 로직의 핵심 기능을 제공하는 패키지
 - `packages/example`: 카운트다운 컴포넌트 사용 예제 애플리케이션
 
 ## 시작하기
