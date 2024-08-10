@@ -10,7 +10,7 @@
 
 ## 시작하기
 
-https://github.com/user-attachments/assets/2f9b0d74-d939-403d-97e3-f324f03bb1bb
+[https://github.com/user-attachments/assets/2f9b0d74-d939-403d-97e3-f324f03bb1bb](https://github.com/user-attachments/assets/8b87632c-7f6d-4ff0-b3af-479f9c090081)
 
 ## 사용 방법
 
