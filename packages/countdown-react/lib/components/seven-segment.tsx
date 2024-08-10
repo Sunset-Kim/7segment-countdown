@@ -1,5 +1,10 @@
 import React, { ComponentPropsWithoutRef, useId } from "react";
-import { SEGMENT_KEY, SEGMENT_MAP, getPoints } from "../../../core/dist";
+import {
+  SEGMENT_KEY,
+  SEGMENT_MAP,
+  SegmentKey,
+  getPoints,
+} from "@7segment/core";
 
 /**
  * SevenSegment 컴포넌트의 속성을 정의하는 인터페이스
@@ -57,7 +62,7 @@ export const SevenSegment: React.FC<SevenSegmentProps> = ({
 interface SegmentProps
   extends Omit<ComponentPropsWithoutRef<"polygon">, "points"> {
   /** segment 식별자 */
-  segment: string;
+  segment: SegmentKey;
   /** 활성화 여부 */
   isActive: boolean;
 }
