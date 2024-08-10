@@ -1,7 +1,7 @@
 {
   "name": "@7segment/core",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.2",
+  "description": "7-segment display library의 core",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -12,7 +12,13 @@
     "build": "rollup -c",
     "watch": "rollup -cw"
   },
-  "keywords": [],
+  "keywords": [
+    "7-segment",
+    "display",
+    "lcd",
+    "led",
+    "seven-segment"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {

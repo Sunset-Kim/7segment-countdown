@@ -2,7 +2,7 @@
  * 7-segment display의 각 세그먼트를 나타내는 키 배열
  */
 export const SEGMENT_KEY = ["A", "B", "C", "D", "E", "F", "G"] as const;
-type SegmentKey = (typeof SEGMENT_KEY)[number];
+export type SegmentKey = (typeof SEGMENT_KEY)[number];
 
 /**
  * 7-segment display에서 각 숫자를 표현하는 세그먼트 조합 맵
